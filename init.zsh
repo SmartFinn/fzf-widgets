@@ -21,7 +21,7 @@ fi
 }
 
 # Support zsh-autosuggestions
-if [[ -n ZSH_AUTOSUGGEST_IGNORE_WIDGETS ]]; then
+if [[ -n $ZSH_AUTOSUGGEST_IGNORE_WIDGETS ]]; then
   ZSH_AUTOSUGGEST_IGNORE_WIDGETS=(
     $ZSH_AUTOSUGGEST_IGNORE_WIDGETS
     `ls $FZF_WIDGET_ROOT/autoload/widgets/`
