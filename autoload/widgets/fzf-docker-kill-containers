@@ -3,8 +3,7 @@
 __fzf::widget::init 'docker container kill' || return 1
 
 docker container ls | \
-  sed 1d | \
-  __fzf::widget::select $FZF_WIDGET_OPTS[docker-kill-containers] -m | \
+  __fzf::widget::select $FZF_WIDGET_OPTS[docker-kill-containers] -m --header-lines=1 | \
   awk '{print $1}' | \
   __fzf::widget::insert
 

@@ -3,8 +3,7 @@
 __fzf::widget::init 'docker container rm' || return 1
 
 docker container ls -a | \
-  sed 1d | \
-  __fzf::widget::select $FZF_WIDGET_OPTS[docker-remove-containers] -m | \
+  __fzf::widget::select $FZF_WIDGET_OPTS[docker-remove-containers] -m --header-lines=1 | \
   awk '{print $1}' | \
   __fzf::widget::insert
 

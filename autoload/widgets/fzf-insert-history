@@ -2,8 +2,7 @@
 
 __fzf::widget::init || return 1
 
-eval "${FZF_HISTORY_COMMAND:-"fc -l 1"}" | \
-  __fzf::widget::select --tac --tiebreak=index \
+eval "${FZF_HISTORY_COMMAND:-"fc -l -n 1 | awk '!seen[\$0]++'"}" | \
+  __fzf::widget::select --tac --tiebreak=index --exact \
   --bind=ctrl-r:toggle-sort $FZF_WIDGET_OPTS[insert-history] --query="$LBUFFER" +m | \
-  sed 's/^ *[0-9]*\*?  //g' | \
   __fzf::widget::replace

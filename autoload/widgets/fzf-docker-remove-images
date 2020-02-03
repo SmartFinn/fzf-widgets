@@ -3,8 +3,7 @@
 __fzf::widget::init 'docker image rm' || return 1
 
 docker image ls | \
-  sed 1d | \
-  __fzf::widget::select $FZF_WIDGET_OPTS[docker-remove-images] -m | \
+  __fzf::widget::select $FZF_WIDGET_OPTS[docker-remove-images] -m --header-lines=1 | \
   awk '{print $3}' | \
   __fzf::widget::insert
 
