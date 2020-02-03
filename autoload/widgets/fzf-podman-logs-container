@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+__fzf::widget::init 'podman container logs' || return 1
+
+podman container list --all --format "table {{.ID}} {{.Names}} {{.Command}} {{.Status}}" | \
+  __fzf::widget::select $FZF_WIDGET_OPTS[podman-logs-container] +m --header-lines=1 | \
+  awk '{print $1}' | \
+  __fzf::widget::insert
+
+__fzf::widget::exec

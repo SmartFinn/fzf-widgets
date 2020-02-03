@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+__fzf::widget::init 'podman image rm' || return 1
+
+podman image ls --format "table {{.Repository}} {{.Tag}} {{.ID}} {{.Size}} {{.Created}}" | \
+  __fzf::widget::select $FZF_WIDGET_OPTS[podman-remove-images] -m --header-lines=1 | \
+  awk '{print $3}' | \
+  __fzf::widget::insert
+
+__fzf::widget::exec

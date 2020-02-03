@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+__fzf::widget::init 'podman volume rm' || return 1
+
+podman volume ls | \
+  __fzf::widget::select $FZF_WIDGET_OPTS[podman-remove-volumes] -m --header-lines=1 | \
+  awk '{print $2}' | \
+  __fzf::widget::insert
+
+__fzf::widget::exec
