@@ -1,5 +1,14 @@
 #!/bin/zsh
 
+if ! __fzf::widget::check 'dotbare'; then
+  local msg='fzf-edit-dotfiles: commnad not found: dotbare
+
+  Please install dotbare (https://github.com/kazhala/dotbare).
+  '
+  __fzf::widget::print "$msg"
+  return 1
+fi
+
 __fzf::widget::init "$EDITOR --" || return 1
 
 dotbare ls-files | \
