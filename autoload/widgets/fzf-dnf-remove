@@ -1,0 +1,14 @@
+#!/bin/zsh
+
+if ! __fzf::widget::check 'dnf'; then
+  __fzf::widget::print 'fzf-dnf-remove: commnad not found: dnf'
+  return 1
+fi
+
+__fzf::widget::init "sudo dnf remove --" || return 1
+
+rpm -qa | \
+  __fzf::widget::select $FZF_WIDGET_OPTS[dnf-remove] -m | \
+  __fzf::widget::insert -q
+
+__fzf::widget::exec
