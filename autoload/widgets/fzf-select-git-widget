@@ -2,10 +2,9 @@
 
 __fzf::widget::init || return 1
 
-ls $FZF_WIDGET_ROOT/autoload/widgets/ | \
-  sed -e 's/fzf-//g' | \
-  grep '^git-.*$' | \
-  egrep -v '^select-widget$' | \
+find $FZF_WIDGET_ROOT/autoload/widgets/ \
+  -name 'fzf-git-*' \
+  -not -name 'fzf-select-*widget' -printf '%f\n' | sed 's/fzf-//' | \
   __fzf::widget::select $FZF_WIDGET_OPTS[select-docker-widget] +m | \
   sed 's/^/fzf-/' | \
   __fzf::widget::exec -q
