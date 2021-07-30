@@ -1,0 +1,16 @@
+#!/bin/zsh
+
+if ! __fzf::widget::check 'flatpak'; then
+  __fzf::widget::print 'fzf-flatpak-uninstall: commnad not found: flatpak'
+  return 1
+fi
+
+__fzf::widget::init "flatpak uninstall --" || return 1
+
+(
+  flatpak list --columns=app,arch,branch | \
+  awk 'BEGIN{OFS="/";} {print $1,$2,$3;}'
+) | __fzf::widget::select $FZF_WIDGET_OPTS[flatpak-uninstall] -m | \
+  __fzf::widget::insert -q
+
+__fzf::widget::exec
