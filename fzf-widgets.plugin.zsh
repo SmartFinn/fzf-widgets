@@ -27,10 +27,13 @@ if [ -z "$FZF_WIDGET_NO_BINDING" ]; then
   fi
 
   # GitHub
-  if (( $+commands[ghi] )); then
+  if (( $+commands[gh] )); then
     bindkey '^@h'  fzf-select-github-widget
-    bindkey '^@hs' fzf-github-show-issue
     bindkey '^@hc' fzf-github-close-issue
+	bindkey '^@he' fzf-github-edit-issue
+	bindkey '^@hm' fzf-github-comment-issue
+	bindkey '^@hr' fzf-github-reopen-issue
+    bindkey '^@hv' fzf-github-view-issue
   fi
 
   ## Docker
