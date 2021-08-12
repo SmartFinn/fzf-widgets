@@ -1,0 +1,25 @@
+#!/bin/zsh
+
+if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+  __fzf::widget::print 'fzf-github-pr-checkout: Not a git repository'
+  return 1
+fi
+
+if ! __fzf::widget::check 'gh'; then
+  local msg='fzf-github-pr-checkout: commnad not found: gh
+
+  Please install gh (https://github.com/cli/cli).
+  '
+  __fzf::widget::print "$msg"
+  return 1
+fi
+
+__fzf::widget::init 'gh pr checkout' || return 1
+
+(
+  gh pr list
+) | __fzf::widget::select $FZF_WIDGET_OPTS[github-pr-checkout] +m | \
+  awk '{print $1}' | \
+  __fzf::widget::insert -q
+
+__fzf::widget::exec

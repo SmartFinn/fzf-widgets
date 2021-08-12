@@ -30,9 +30,10 @@ if [ -z "$FZF_WIDGET_NO_BINDING" ]; then
   if (( $+commands[gh] )); then
     bindkey '^@h'  fzf-select-github-widget
     bindkey '^@hc' fzf-github-close-issue
-	bindkey '^@he' fzf-github-edit-issue
-	bindkey '^@hm' fzf-github-comment-issue
-	bindkey '^@hr' fzf-github-reopen-issue
+    bindkey '^@he' fzf-github-edit-issue
+    bindkey '^@hm' fzf-github-comment-issue
+    bindkey '^@hp' fzf-github-pr-checkout
+    bindkey '^@hr' fzf-github-reopen-issue
     bindkey '^@hv' fzf-github-view-issue
   fi
 
