@@ -11,7 +11,7 @@ fi
 
 __fzf::widget::init "$EDITOR --" || return 1
 
-dotbare ls-files | \
+dotbare -C "$HOME" ls-files | \
   __fzf::widget::select $FZF_WIDGET_OPTS[edit-dotfiles] -m | \
   __fzf::widget::insert -q
 
