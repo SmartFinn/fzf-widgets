@@ -40,13 +40,13 @@ if [ -z "$FZF_WIDGET_NO_BINDING" ]; then
   ## Docker
   if (( $+commands[docker] )); then
     bindkey '^@d'  fzf-select-docker-widget
-    bindkey '^@dc' fzf-docker-remove-containers
-    bindkey '^@di' fzf-docker-remove-images
-    bindkey '^@dv' fzf-docker-remove-volumes
-    bindkey '^@dk' fzf-docker-kill-containers
-    bindkey '^@dl' fzf-docker-logs-container
-    bindkey '^@dr' fzf-docker-start-containers
-    bindkey '^@ds' fzf-docker-stop-containers
+    bindkey '^@dc' fzf-docker-containers-remove
+    bindkey '^@di' fzf-docker-images-remove
+    bindkey '^@dv' fzf-docker-volumes-remove
+    bindkey '^@dk' fzf-docker-containers-kill
+    bindkey '^@dl' fzf-docker-container-logs
+    bindkey '^@dr' fzf-docker-containers-start
+    bindkey '^@ds' fzf-docker-containers-stop
   fi
 
   ## Podman
