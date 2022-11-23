@@ -51,17 +51,17 @@ if [ -z "$FZF_WIDGET_NO_BINDING" ]; then
 
   ## Podman
   if (( $+commands[podman] )); then
-    bindkey '^@p'  fzf-select-podman-widget
-    bindkey '^@pc' fzf-podman-remove-containers
-    bindkey '^@pi' fzf-podman-remove-images
-    bindkey '^@pv' fzf-podman-remove-volumes
-    bindkey '^@pk' fzf-podman-kill-containers
-    bindkey '^@pl' fzf-podman-logs-container
-    bindkey '^@pr' fzf-podman-start-containers
-    bindkey '^@ps' fzf-podman-stop-containers
-    bindkey '^@pps' fzf-podman-stop-pod
-    bindkey '^@ppl' fzf-podman-logs-pod
-    bindkey '^@ppr' fzf-podman-rm-pod
+    bindkey '^@p'   fzf-select-podman-widget
+    bindkey '^@pc'  fzf-podman-containers-remove
+    bindkey '^@pi'  fzf-podman-images-remove
+    bindkey '^@pv'  fzf-podman-volumes-remove
+    bindkey '^@pk'  fzf-podman-containers-kill
+    bindkey '^@pl'  fzf-podman-container-logs
+    bindkey '^@pr'  fzf-podman-containers-start
+    bindkey '^@ps'  fzf-podman-containers-stop
+    bindkey '^@pps' fzf-podman-pods-stop
+    bindkey '^@ppr' fzf-podman-pods-remove
+    bindkey '^@ppl' fzf-podman-pod-logs
   fi
 fi
 
