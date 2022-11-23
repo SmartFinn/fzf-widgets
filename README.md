@@ -7,15 +7,12 @@
 [Configuration](#configuration) |
 [License](#license)
 
-[![license-badge]][license-link]
-[![release-badge]][release-link]
 
 ## Overview
 
 This repository manage ZLE widgets of fzf.
 Available widgets can check [here][widgets-link].
 
-![screenshot]
 
 ### Pros
 
@@ -31,7 +28,7 @@ You can install with plugin manager.
 If use zplug, add the following to your `.zshrc`:
 
 ```zsh
-zplug 'ytet5uy4/fzf-widgets'
+zplug 'SmartFinn/fzf-widgets'
 ```
 
 ## Requirements
@@ -49,7 +46,7 @@ You can map widgets to key and specify options of `fzf` to widgets.
 For example, add the following to your `.zshrc`:
 
 ```zsh
-if zplug check 'ytet5uy4/fzf-widgets'; then
+if zplug check 'SmartFinn/fzf-widgets'; then
   # Map widgets to key
   bindkey '^@'  fzf-select-widget
   bindkey '^@.' fzf-edit-dotfiles
@@ -99,16 +96,13 @@ fi
 
 ## License
 
-Copyright (c) 2017 ytet5uy4
+Copyright (c) 2022 SmartFinn (https://github.com/SmartFinn)<br/>
+Copyright (c) 2017 ytet5uy4 (https://github.com/ytet5uy4)
 
 Released under the MIT License, see **[LICENSE.md][license-link]**.
 
-[screenshot]: https://image.ytet5uy4.com/170920162058.png
-[release-badge]: https://img.shields.io/github/release/ytet5uy4/fzf-widgets.svg?style=flat-square
-[license-badge]: https://img.shields.io/github/license/ytet5uy4/fzf-widgets.svg?style=flat-square
 
-[release-link]: //github.com/ytet5uy4/fzf-widgets/releases/latest
 [license-link]: LICENSE.md
 [zsh-autosuggestions-link]: //github.com/zsh-users/zsh-autosuggestions
-[widgets-link]: //github.com/ytet5uy4/fzf-widgets/tree/master/autoload/widgets
+[widgets-link]: //github.com/SmartFinn/fzf-widgets/tree/master/autoload/widgets
 [ghq-link]: //github.com/motemen/ghq

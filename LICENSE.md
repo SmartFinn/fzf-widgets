@@ -1,6 +1,7 @@
 The MIT License (MIT)
 
-Copyright (c) 2017 ytet5uy4
+Copyright (c) 2022 SmartFinn (https://github.com/SmartFinn)
+Copyright (c) 2017 ytet5uy4 (https://github.com/ytet5uy4)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
