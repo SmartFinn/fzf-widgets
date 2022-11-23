@@ -59,6 +59,9 @@ if [ -z "$FZF_WIDGET_NO_BINDING" ]; then
     bindkey '^@pl' fzf-podman-logs-container
     bindkey '^@pr' fzf-podman-start-containers
     bindkey '^@ps' fzf-podman-stop-containers
+    bindkey '^@pps' fzf-podman-stop-pod
+    bindkey '^@ppl' fzf-podman-logs-pod
+    bindkey '^@ppr' fzf-podman-rm-pod
   fi
 fi
 
