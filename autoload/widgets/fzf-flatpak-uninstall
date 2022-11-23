@@ -10,7 +10,8 @@ __fzf::widget::init "flatpak uninstall --" || return 1
 (
   flatpak list --columns=app,arch,branch | \
   awk 'BEGIN{OFS="/";} {print $1,$2,$3;}'
-) | __fzf::widget::select $FZF_WIDGET_OPTS[flatpak-uninstall] -m | \
+) | __fzf::widget::select $FZF_WIDGET_OPTS[flatpak-uninstall] -m \
+    --preview 'flatpak info {}'| \
   __fzf::widget::insert -q
 
 __fzf::widget::exec
