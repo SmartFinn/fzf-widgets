@@ -2,9 +2,7 @@
 
 __fzf::widget::init || return 1
 
-find $FZF_WIDGET_ROOT/autoload/widgets/ \
-  -name 'fzf-podman-*' \
-  -not -name 'fzf-select-*widget' -printf '%f\n' | sed 's/fzf-//' | \
+__fzf::widget::widgets 'fzf-podman-' | sed 's/fzf-//' | \
   __fzf::widget::select $FZF_WIDGET_OPTS[select-podman-widget] +m | \
   sed 's/^/fzf-/' | \
   __fzf::widget::exec -q

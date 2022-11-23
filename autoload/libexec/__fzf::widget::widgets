@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+local widget_path
+
+for widget_path ($FZF_WIDGET_ROOT/autoload/widgets/${1-}*(.)) {
+  print -- "$widget_path:t"
+}
