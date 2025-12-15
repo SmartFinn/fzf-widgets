@@ -5,7 +5,7 @@ if ! __fzf::widget::check 'flatpak'; then
   return 1
 fi
 
-__fzf::widget::init "flatpak uninstall --" || return 1
+__fzf::widget::init "flatpak uninstall --delete-data --" || return 1
 
 (
   flatpak list --columns=app,arch,branch | \
