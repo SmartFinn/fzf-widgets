@@ -5,7 +5,7 @@ if ! __fzf::widget::check 'dnf'; then
   return 1
 fi
 
-__fzf::widget::init "sudo dnf install --" || return 1
+__fzf::widget::init "sudo dnf install" || return 1
 
 dnf --cacheonly --quiet list --available | cut -d' ' -f1 | \
   __fzf::widget::select $FZF_WIDGET_OPTS[dnf-remove] -m --header-lines=1 | \

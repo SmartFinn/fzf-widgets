@@ -5,7 +5,7 @@ if ! __fzf::widget::check 'dnf'; then
   return 1
 fi
 
-__fzf::widget::init "sudo dnf remove --" || return 1
+__fzf::widget::init "sudo dnf remove" || return 1
 
 rpm -qa | \
   __fzf::widget::select $FZF_WIDGET_OPTS[dnf-remove] -m \
